@@ -18,7 +18,7 @@
       "env": [
         {
           "name": "DISCORD_AUTH_TOKEN",
-          "label": "Discord Auth Token",
+          "label": "Discord Auth Token"
         },
         {
           "name": "DISCORD_GUILD_ID",
