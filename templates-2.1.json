@@ -2,6 +2,39 @@
   "version": "2",
   "templates": [
     {
+      "type": 3,
+      "title": "Blank Discord Bot",
+      "name": "blank_discord_bot",
+      "description": "Development Deployment of BlankDiscordBot",
+      "categories": [
+        "Cloud",
+        "Discord",
+        "Bot"
+      ],
+      "note": "Deploys BlankDiscordBot with standard database user settings, not to be used for production usage.",
+      "platform": "linux",
+      "repository": {
+        "url": "https://github.com/Zorro909/portainer_templates",
+        "stackfile": "stacks/blankdiscordbot.yml"
+      },
+      "env": [
+        {
+          "name": "DISCORD_AUTH_TOKEN",
+          "label": "Discord Auth Token",
+        },
+        {
+          "name": "DISCORD_GUILD_ID",
+          "label": "Discord Guild ID",
+          "default": "556216333201702942"
+        },
+        {
+          "name": "TAG",
+          "label": "Docker Image Tag",
+          "default": "develop"
+        }
+      ]
+    },
+    {
       "type": 1,
       "title": "Airsonic",
       "name": "airsonic",
