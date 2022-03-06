@@ -29,6 +29,11 @@
           "name": "TAG",
           "label": "Docker Image Tag",
           "default": "develop"
+        },
+        {
+          "name": "spring.config.location",
+          "label": "Spring Config Location",
+          "default": "config/application.yml"          
         }
       ]
     },
