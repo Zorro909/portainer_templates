@@ -1,0 +1,43 @@
+version: "3.7"
+services:
+  frontend:
+    image: zorro909/blankdiscordbot:${TAG}
+    volumes:
+     - blankBotConfig:/blankbot/config
+    networks:
+     - blank-bot-bridge
+    environment:
+      MYSQL_HOST: ${MYSQL_HOST}
+      MYSQL_HOSTNAME: ${MYSQL_HOSTNAME}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_USERNAME: ${MYSQL_USERNAME}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+      DISCORD_AUTH_TOKEN: ${DISCORD_AUTH_TOKEN}
+      DISCORD_GUILD_ID: ${DISCORD_GUILD_ID}
+  mysql:
+    image: "mariadb"
+    environment:
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_USER: ${MYSQL_USERNAME}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+    networks:
+      - blank-bot-bridge
+    volumes:
+      - blankBotMysqlData:/var/lib/mysql
+networks:
+  blank-bot-bridge:
+    driver: bridge
+volumes:
+  blankBotMysqlData:
+  blankBotConfig:
+environment:
+  MYSQL_HOST: jdbc://mysql:3306
+  MYSQL_HOSTNAME: mysql:3306
+  MYSQL_DATABASE: blankbot
+  MYSQL_ROOT_PASSWORD: rootpass
+  MYSQL_USERNAME: blankbot
+  MYSQL_PASSWORD: blankbot
+  DISCORD_AUTH_TOKEN:
+  DISCORD_GUILD_ID:
+  TAG:
