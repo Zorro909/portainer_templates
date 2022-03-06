@@ -7,14 +7,14 @@ services:
     networks:
      - blank-bot-bridge
     environment:
-      MYSQL_HOST: jdbc://mysql:3306
+      MYSQL_HOST: jdbc:mysql://mysql:3306
       MYSQL_HOSTNAME: mysql:3306
       MYSQL_DATABASE: blankbot
       MYSQL_USERNAME: blankbot
       MYSQL_PASSWORD: blankbot
-      DISCORD_AUTH_TOKEN:
-      DISCORD_GUILD_ID:
-      SPRING_CONFIG:
+      DISCORD_AUTH_TOKEN: ${DISCORD_AUTH_TOKEN}
+      DISCORD_GUILD_ID: ${DISCORD_GUILD_ID}
+      SPRING_CONFIG: ${SPRING_CONFIG}
   mysql:
     image: "mariadb"
     environment:
