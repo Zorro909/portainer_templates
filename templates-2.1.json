@@ -7,9 +7,7 @@
       "name": "blank_discord_bot",
       "description": "Development Deployment of BlankDiscordBot",
       "categories": [
-        "Cloud",
-        "Discord",
-        "Bot"
+        "Other"
       ],
       "note": "Deploys BlankDiscordBot with standard database user settings, not to be used for production usage.",
       "platform": "linux",
