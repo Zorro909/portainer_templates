@@ -14,7 +14,8 @@ services:
       MYSQL_PASSWORD: blankbot
       DISCORD_AUTH_TOKEN: ${DISCORD_AUTH_TOKEN}
       DISCORD_GUILD_ID: ${DISCORD_GUILD_ID}
-      SPRING_CONFIG: ${SPRING_CONFIG}
+    entrypoint: /bin/sh
+    command: -c 'curl -o config/application.yml $SPRING_CONFIG && ./wait-for-it.sh mysql:3306 -- java -jar BlankDiscordBot.jar -Dspring.config.location=config/application.yml'
   mysql:
     image: "mariadb"
     environment:
