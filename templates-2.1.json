@@ -31,7 +31,7 @@
           "default": "develop"
         },
         {
-          "name": "spring.config.location",
+          "name": "SPRING_CONFIG",
           "label": "Spring Config Location",
           "default": "config/application.yml"          
         }
